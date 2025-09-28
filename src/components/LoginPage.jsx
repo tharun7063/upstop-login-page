@@ -74,7 +74,7 @@ export default function LoginPage() {
                 username: formData.username.trim(),
                 password: formData.password,
                 ...(formData.email ? { email: formData.email.trim() } : {}),
-                expiresInMins: 30, // included here
+                expiresInMins: 30, 
             };
 
             // Call the dummy API
@@ -92,9 +92,8 @@ export default function LoginPage() {
                 loggedIn: true,
             };
             localStorage.setItem("userData", JSON.stringify(userData));
-
-            // Redirect to home
             navigate("/home");
+            
         } catch (err) {
             // Even if API fails, still store and redirect
             const userData = {
